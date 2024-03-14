@@ -21,6 +21,11 @@ jobs:
         run: |
           npm install -g asar webpack webpack-cli
           npm install webpack --save-dev
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build ${{ runner.arch }}
+        run: yarn make
       - name: Show Directory
         run: |
           pwd
